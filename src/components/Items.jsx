@@ -3,14 +3,14 @@ import array from './array';
 import '../styles/Items.css'
 
 const Items = () => {
-  console.log(array);
+  // console.log(array);
   return (
     <div className='items'>
-      <Item array={array}/>
-      <Item array={array}/>
-      <Item array={array}/>
-      <Item array={array}/>
-      <Item array={array}/>
+      {array.map((item, index) => {
+        return (
+          <Item id={item.id} city={item.city} country={item.country} airQuality={item.airQuality} key={index} />
+        )
+      })}
     </div>
   );
 }
