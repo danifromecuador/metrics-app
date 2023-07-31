@@ -4,10 +4,11 @@ const URL = 'https://api.spacexdata.com/v3/missions';
 
 const initialState = [];
 
-const fetchData = async () => {
+const fetchDataAsync = async () => {
   try {
     const response = await fetch(URL);
     const data = await response.json();
+    console.log(data);
     return data;
   }
   catch (error) {
@@ -15,7 +16,7 @@ const fetchData = async () => {
   }
 };
 
-export const fetchItems = createAsyncThunk("items/fetchItems", fetchData);
+export const fetchItems = createAsyncThunk("items/fetchItems", fetchDataAsync);
 
 const itemsSlice = createSlice({
   name: 'items',
@@ -30,3 +31,5 @@ const itemsSlice = createSlice({
 });
 
 export default itemsSlice.reducer;
+
+// Path: src/redux/items/itemsSlice.js
