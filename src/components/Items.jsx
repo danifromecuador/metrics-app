@@ -1,9 +1,11 @@
 import Item from './Item';
+import array from './array';
 
 const Items = () => {
+  console.log(array);
   return (
     <div>
-      <Item />
+      <Item array={array}/>
     </div>
   );
 }

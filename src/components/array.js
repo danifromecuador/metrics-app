@@ -29,7 +29,7 @@ const array = [
     country: "China",
     airQuality: "Unhealthy",
   },
-};
+];
 
 export default array;
 
