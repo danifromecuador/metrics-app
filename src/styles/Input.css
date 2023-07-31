@@ -1,0 +1,15 @@
+.inputContainer {
+  height: 80px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 90%;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;  
+}

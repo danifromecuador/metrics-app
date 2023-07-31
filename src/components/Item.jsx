@@ -1,15 +1,10 @@
-const Item = ({array}) => {
+import '../styles/Item.css'
+
+const Item = () => {
   return (
-    <div>
-      {array.map((item, index) => {
-        return (
-          <div key={index}>
-            <h1>{item.city}</h1>
-            <p>{item.airQuality}</p>
-          </div>
-        );
-      })}
-    </div>    
+    <div className="item">
+      <h1>Item</h1>
+    </div>
   );
 }
 
