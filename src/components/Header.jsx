@@ -9,3 +9,5 @@ const Header = () => {
   );
 }
 export default Header;
+
+// Path: src/components/Header.jsx

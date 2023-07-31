@@ -3,7 +3,6 @@ import array from './array';
 import '../styles/Items.css'
 
 const Items = () => {
-  // console.log(array);
   return (
     <div className='items'>
       {array.map((item, index) => {
@@ -16,3 +15,5 @@ const Items = () => {
 }
 
 export default Items;
+
+// Path: src/components/Items.jsx

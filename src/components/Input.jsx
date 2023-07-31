@@ -9,3 +9,5 @@ const Input = () => {
 }
 
 export default Input;
+
+// Path: src/components/Input.jsx

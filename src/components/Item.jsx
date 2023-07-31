@@ -15,3 +15,5 @@ const Item = ({id, city, country, airQuality}) => {
 }
 
 export default Item;
+
+// Path: src/components/Item.jsx
