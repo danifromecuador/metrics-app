@@ -1,20 +1,29 @@
+import { useParams } from "react-router-dom";
+
 import Header from "../components/Header";
 import array from "../components/array";
+import '../styles/Details.css'
 
 
 const Details = () => {
-  console.log(array);
+  const { itemId } = useParams();
+  const selectedArrayItem = array.find((item) => item.id.toString() === itemId);
+
+  if (!selectedArrayItem) {
+    return <div>Item not found</div>;
+  }
+
   return (
-    <div>
+    <div className="details-page">
       <Header />
-      <div className="item">
-        <h2>{array[2].city}</h2>
-        <h3>{array[2].country}</h3>
-        <p>{array[2].airQuality}</p>
+      <div className="details">
+        <h2>{selectedArrayItem.city}</h2>
+        <h3>{selectedArrayItem.country}</h3>
+        <p>{selectedArrayItem.airQuality}</p>
       </div>
     </div>
   );
-}
+};
 
 export default Details;
 

@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
 import '../styles/Header.css'
 
 const Header = () => {
   return (
     <header>
-      <img src="https://img.icons8.com/ios/50/000000/return.png" alt="return arrow" />
+      <Link to="/" className="return-arrow">
+        return
+      </Link>
       <h1>HEADER</h1>
     </header>
   );
