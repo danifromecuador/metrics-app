@@ -1,10 +1,19 @@
 import { useSelector } from 'react-redux';
 import Item from './Item';
 import '../styles/Items.css';
+import { fetchItems } from '../redux/items/itemsSlice';
+
+
+const fetchItemsData = async () => {
+  try {
+    await fetchItems();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const Items = () => {
-  const items = useSelector((state) => state.items.slice(0, 8)); // Slice the array to get the first 8 cities
-
+  const items = useSelector((state) => state.items);
   return (
     <div className='items'>
       {items.map((item, index) => (
