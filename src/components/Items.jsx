@@ -1,5 +1,4 @@
 import { useSelector} from 'react-redux';
-import { fetchItems } from '../redux/items/itemsSlice';
 import Item from './Item';
 import '../styles/Items.css'
 
@@ -10,9 +9,10 @@ const Items = () => {
     <div className='items'>
       {items.map((item, index) => (
         <Item
-          id={index} // Use the index as the unique identifier, as the 'id' in the original array might not be unique
+          id={index}
           city={item.city}
-          airQuality={item.components.co} // Adjust this based on your data structure in the Redux store
+          carbonMonoxide={item.components.co}
+          ozone={item.components.o3}
           key={index}
         />
       ))}

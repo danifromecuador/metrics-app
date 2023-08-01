@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../styles/Item.css';
 
-const Item = ({ id, city, country, airQuality }) => {
+const Item = ({ id, city, carbonMonoxide, ozone }) => {
   return (
     <Link to={`/details/${id}`} className="item">
       <h2>{city}</h2>
-      <h3>{country}</h3>
-      <p>{airQuality}</p>
+      <p>Carbon Monoxide Concentration: {carbonMonoxide}</p>
+      <p>Ozone Concentration: {ozone}</p>
     </Link>
   );
 };
@@ -15,7 +15,8 @@ const Item = ({ id, city, country, airQuality }) => {
 Item.propTypes = {
   id: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
-  airQuality: PropTypes.number.isRequired,
+  carbonMonoxide: PropTypes.number.isRequired,
+  ozone: PropTypes.number.isRequired,
 };
 
 export default Item;
