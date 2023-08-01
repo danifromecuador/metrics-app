@@ -1,13 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux';
+import { fetchItems } from './redux/items/itemsSlice';
 import Home from './pages/Home'
 import Details from './pages/Details'
 import './App.css'
 
-// import obtainGeoCode from './redux/items/obtainGeoCode'
-
 
 function App() {
-  // obtainGeoCode("quito")
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchItems());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <Router>
