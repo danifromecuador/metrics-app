@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import '../styles/Item.css';
 
 const Item = ({ id, city, carbonMonoxide, ozone }) => {
+  console.log(city)
   return (
-    <Link to={`/details/${id}`} className="item">
+    <Link to={`/details/${city}`} className="item">
       <h2>{city}</h2>
       <p>Carbon Monoxide Concentration: {carbonMonoxide}</p>
       <p>Ozone Concentration: {ozone}</p>

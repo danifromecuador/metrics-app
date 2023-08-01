@@ -7,8 +7,8 @@ import '../styles/Details.css'
 
 const Details = () => {
   const items = useSelector((state) => state.items);
-  const { itemId } = useParams();
-  const selectedArrayItem = items.find((item) => item.id.toString() === itemId);
+  const { city } = useParams();
+  const selectedArrayItem = items.find((item) => item.city === city);
 
   return (
     <div className="details-page">
