@@ -1,19 +1,26 @@
+import { useSelector } from 'react-redux';
 import Item from './Item';
-import array from './array';
-import '../styles/Items.css'
+import '../styles/Items.css';
 
 const Items = () => {
+  const items = useSelector((state) => state.items.slice(0, 8)); // Slice the array to get the first 8 cities
+
   return (
     <div className='items'>
-      {array.map((item, index) => {
-        return (
-          <Item id={item.id} city={item.city} country={item.country} airQuality={item.airQuality} key={index} />
-        )
-      })}
+      {items.map((item, index) => (
+        <Item
+          id={index}
+          city={item.city}
+          carbonMonoxide={item.components.co}
+          ozone={item.components.o3}
+          key={index}
+        />
+      ))}
     </div>
   );
 }
 
 export default Items;
+
 
 // Path: src/components/Items.jsx
