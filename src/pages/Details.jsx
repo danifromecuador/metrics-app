@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Header from "../components/Header";
 import array from "../components/array";
@@ -6,8 +7,9 @@ import '../styles/Details.css'
 
 
 const Details = () => {
+  const items = useSelector((state) => state.items);
   const { itemId } = useParams();
-  const selectedArrayItem = array.find((item) => item.id.toString() === itemId);
+  const selectedArrayItem = items.find((item) => item.id.toString() === itemId);
 
   if (!selectedArrayItem) {
     return <div>Item not found</div>;

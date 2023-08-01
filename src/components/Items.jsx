@@ -22,5 +22,4 @@ const Items = () => {
 
 export default Items;
 
-
 // Path: src/components/Items.jsx
