@@ -1,22 +1,41 @@
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-
-const URL = 'https://api.spacexdata.com/v3/missions';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import main100Cities from './main100Cities.js';
 
 const initialState = [];
 
-const fetchDataAsync = async () => {
+const GEOCODEAPIENDPOINT = 'http://api.openweathermap.org/geo/1.0/direct?';
+const CITIESAIRPOLLUTIONENDPOINT = 'http://api.openweathermap.org/data/2.5/air_pollution?';
+const WEATHERAPIKEY = "bb97736519c9fc5db2374f27ed914c13";
+
+const geoCode = async (city) => {
   try {
-    const response = await fetch(URL);
+    const response = await fetch(`${GEOCODEAPIENDPOINT}q=${city}&appid=${WEATHERAPIKEY}`);
     const data = await response.json();
-    console.log(data);
-    return data;
-  }
-  catch (error) {
+    return { city, country: data[0].country, lat: data[0].lat, lon: data[0].lon };
+  } catch (error) {
     throw Error(error);
   }
-};
+}
 
-export const fetchItems = createAsyncThunk("items/fetchItems", fetchDataAsync);
+const citiesAirQuality = async (city) => {
+  try {
+    const { lat, lon } = await geoCode(city);
+    const response = await fetch(`${CITIESAIRPOLLUTIONENDPOINT}lat=${lat}&lon=${lon}&appid=${WEATHERAPIKEY}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw Error(error);
+  }
+}
+
+export const fetchItems = createAsyncThunk("items/fetchItems", async () => {
+  try {
+    const mainCitiesWorldwideData = await Promise.all(main100Cities.map((city) => citiesAirQuality(city)));
+    return mainCitiesWorldwideData;
+  } catch (error) {
+    throw Error(error);
+  }
+});
 
 const itemsSlice = createSlice({
   name: 'items',
@@ -24,12 +43,19 @@ const itemsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchItems.fulfilled, (state, action) => {
-      console.log(action.payload);
-      return action.payload;
+      const mainCitiesWorldwideData = action.payload;
+      mainCitiesWorldwideData.forEach((cityData, index) => {
+        const cityObject = {
+          city: main100Cities[index],
+          components: cityData.list[0].components
+        };
+        state.push(cityObject);
+      });
     });
   },
 });
 
 export default itemsSlice.reducer;
+
 
 // Path: src/redux/items/itemsSlice.js
