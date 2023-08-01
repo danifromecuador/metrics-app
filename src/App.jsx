@@ -3,7 +3,11 @@ import Home from './pages/Home'
 import Details from './pages/Details'
 import './App.css'
 
+// import obtainGeoCode from './redux/items/obtainGeoCode'
+
+
 function App() {
+  // obtainGeoCode("quito")
   return (
     <div className="App">
       <Router>

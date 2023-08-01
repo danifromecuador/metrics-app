@@ -7,17 +7,18 @@ import '../styles/Item.css';
 
 const Item = ({ id, city, country, airQuality }) => {
   const dispatch = useDispatch();
-  // const onClick = (event) => {
-  //   event.preventDefault();
-  //   console.log(event.currentTarget);
-  // };
+  
+  const onClick = (event) => {
+    event.preventDefault();
+    console.log(event.currentTarget);
+  };
 
   useEffect(() => {
     dispatch(fetchItems());
   }, [dispatch]);
 
   return (
-    <Link to={`/details/${id}`} className="item">
+    <Link to={`/details/${id}`} className="item" onClick={onClick}>
       <h2>{city}</h2>
       <h3>{country}</h3>
       <p>{airQuality}</p>

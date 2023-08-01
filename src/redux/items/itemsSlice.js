@@ -1,4 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
+import obtainGeoCode from './obtainGeoCode';
 
 const URL = 'https://api.spacexdata.com/v3/missions';
 
@@ -6,7 +7,7 @@ const initialState = [];
 
 const fetchDataAsync = async () => {
   try {
-    const response = await fetch(URL);
+    const response = await fetch(`${ENDPOINT}q=quito&appid=${GEOCODINGAPIKEY}`);
     const data = await response.json();
     console.log(data);
     return data;
@@ -24,7 +25,7 @@ const itemsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchItems.fulfilled, (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       return action.payload;
     });
   },
