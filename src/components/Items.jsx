@@ -1,9 +1,9 @@
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import Item from './Item';
-import '../styles/Items.css'
+import '../styles/Items.css';
 
 const Items = () => {
-  const items = useSelector((state) => state.items);
+  const items = useSelector((state) => state.items.slice(0, 8)); // Slice the array to get the first 8 cities
 
   return (
     <div className='items'>
@@ -21,5 +21,6 @@ const Items = () => {
 }
 
 export default Items;
+
 
 // Path: src/components/Items.jsx
