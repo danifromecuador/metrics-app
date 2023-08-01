@@ -1,15 +1,21 @@
+import { useSelector} from 'react-redux';
+import { fetchItems } from '../redux/items/itemsSlice';
 import Item from './Item';
-import array from './array';
 import '../styles/Items.css'
 
 const Items = () => {
+  const items = useSelector((state) => state.items);
+
   return (
     <div className='items'>
-      {array.map((item, index) => {
-        return (
-          <Item id={item.id} city={item.city} country={item.country} airQuality={item.airQuality} key={index} />
-        )
-      })}
+      {items.map((item, index) => (
+        <Item
+          id={index} // Use the index as the unique identifier, as the 'id' in the original array might not be unique
+          city={item.city}
+          airQuality={item.components.co} // Adjust this based on your data structure in the Redux store
+          key={index}
+        />
+      ))}
     </div>
   );
 }

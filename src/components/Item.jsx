@@ -15,8 +15,7 @@ const Item = ({ id, city, country, airQuality }) => {
 Item.propTypes = {
   id: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
-  airQuality: PropTypes.string.isRequired,
+  airQuality: PropTypes.number.isRequired,
 };
 
 export default Item;
