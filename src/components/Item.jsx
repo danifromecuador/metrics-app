@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../styles/Item.css';
 
-const Item = ({ id, city, carbonMonoxide, ozone }) => {
+const Item = ({ city, carbonMonoxide, ozone }) => {
   console.log(city)
   return (
     <Link to={`/details/${city}`} className="item">

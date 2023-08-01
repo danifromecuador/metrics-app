@@ -1,16 +1,6 @@
 import { useSelector } from 'react-redux';
 import Item from './Item';
 import '../styles/Items.css';
-import { fetchItems } from '../redux/items/itemsSlice';
-
-
-const fetchItemsData = async () => {
-  try {
-    await fetchItems();
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 const Items = () => {
   const items = useSelector((state) => state.items);
