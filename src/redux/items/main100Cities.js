@@ -9,7 +9,7 @@ const mainCitiesWorldwide = [
   'Dhaka',
   'Mexico City',
   'Osaka',
-  'Karachi',
+  /*'Karachi',
   'Chongqing',
   'Istanbul',
   'Buenos Aires',
@@ -99,7 +99,7 @@ const mainCitiesWorldwide = [
   'Nairobi',
   'Casablanca',
   'Lagos',
-  'Dakar',
+  'Dakar',*/
 ];
 
 export default mainCitiesWorldwide;

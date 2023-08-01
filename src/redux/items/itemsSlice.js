@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import main100Cities from './main100Cities.js';
 
 const initialState = [];
 
@@ -10,7 +11,7 @@ const geoCode = async (city) => {
   try {
     const response = await fetch(`${GEOCODEAPIENDPOINT}q=${city}&appid=${WEATHERAPIKEY}`);
     const data = await response.json();
-    return { country: data[0].countrym, lat: data[0].lat, lon: data[0].lon };
+    return { city, country: data[0].country, lat: data[0].lat, lon: data[0].lon };
   } catch (error) {
     throw Error(error);
   }
@@ -29,8 +30,8 @@ const citiesAirQuality = async (city) => {
 
 export const fetchItems = createAsyncThunk("items/fetchItems", async () => {
   try {
-    const data = await citiesAirQuality("quito");
-    return data;
+    const mainCitiesWorldwideData = await Promise.all(main100Cities.map((city) => citiesAirQuality(city)));
+    return mainCitiesWorldwideData;
   } catch (error) {
     throw Error(error);
   }
@@ -42,8 +43,14 @@ const itemsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchItems.fulfilled, (state, action) => {
-      console.log(action.payload);
-      state.push(action.payload);
+      const mainCitiesWorldwideData = action.payload;
+      mainCitiesWorldwideData.forEach((cityData, index) => {
+        const cityObject = {
+          city: main100Cities[index],
+          components: cityData.list[0].components
+        };
+        state.push(cityObject);
+      });
     });
   },
 });
