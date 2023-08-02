@@ -75,6 +75,7 @@ const itemsSlice = createSlice({
           components: cityData.list[0].components
         };
         state.items.push(cityObject);
+        state.filteredItems.push(cityObject);
       });
     })
     .addCase(fetchItems.rejected, (state, action) => {
