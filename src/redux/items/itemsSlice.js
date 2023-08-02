@@ -46,6 +46,7 @@ const itemsSlice = createSlice({
       const mainCitiesWorldwideData = action.payload;
       mainCitiesWorldwideData.forEach((cityData, index) => {
         const cityObject = {
+          id: index,
           city: main100Cities[index],
           components: cityData.list[0].components
         };

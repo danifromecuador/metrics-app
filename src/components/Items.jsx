@@ -3,8 +3,7 @@ import Item from './Item';
 import '../styles/Items.css';
 
 const Items = () => {
-  const items = useSelector((state) => state.items.slice(0, 8)); // Slice the array to get the first 8 cities
-
+  const items = useSelector((state) => state.items);
   return (
     <div className='items'>
       {items.map((item, index) => (
@@ -21,6 +20,5 @@ const Items = () => {
 }
 
 export default Items;
-
 
 // Path: src/components/Items.jsx
