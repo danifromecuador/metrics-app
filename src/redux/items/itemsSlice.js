@@ -1,7 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import main100Cities from './main100Cities.js';
 
-const initialState = [];
+const initialState = {
+  items: [],
+  rejected: false,
+  error: false,
+  filteredItems: []
+};
 
 const GEOCODEAPIENDPOINT = 'http://api.openweathermap.org/geo/1.0/direct?';
 const CITIESAIRPOLLUTIONENDPOINT = 'http://api.openweathermap.org/data/2.5/air_pollution?';
@@ -38,13 +43,14 @@ export const fetchItems = createAsyncThunk("items/fetchItems", async () => {
 });
 
 const itemsSlice = createSlice({
-  name: 'items',
+  name: 'cities',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
     .addCase(fetchItems.pending, (state, action) => {
-      console.log("espere");
+      state.rejected = false;
+      state.error = false;
     })    
     .addCase(fetchItems.fulfilled, (state, action) => {
       const mainCitiesWorldwideData = action.payload;
@@ -54,17 +60,15 @@ const itemsSlice = createSlice({
           city: main100Cities[index],
           components: cityData.list[0].components
         };
-        state.push(cityObject);
+        state.items.push(cityObject);
       });
     })
     .addCase(fetchItems.rejected, (state, action) => {
-      console.log("error");
+      state.rejected = true;
+      state.error = true;
     }
     );   
   },
 });
 
 export default itemsSlice.reducer;
-
-
-// Path: src/redux/items/itemsSlice.js

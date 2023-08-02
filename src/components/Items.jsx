@@ -3,10 +3,10 @@ import Item from './Item';
 import '../styles/Items.css';
 
 const Items = () => {
-  const items = useSelector((state) => state.cities);
+  const cities = useSelector((state) => state.cities.items);
   return (
     <div className='items'>
-      {items.map((item, index) => (
+      {cities.map((item, index) => (
         <Item
           id={index}
           city={item.city}
@@ -20,5 +20,6 @@ const Items = () => {
 }
 
 export default Items;
+
 
 // Path: src/components/Items.jsx
