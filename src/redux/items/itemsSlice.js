@@ -42,7 +42,11 @@ const itemsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchItems.fulfilled, (state, action) => {
+    builder
+    .addCase(fetchItems.pending, (state, action) => {
+      console.log("espere");
+    })    
+    .addCase(fetchItems.fulfilled, (state, action) => {
       const mainCitiesWorldwideData = action.payload;
       mainCitiesWorldwideData.forEach((cityData, index) => {
         const cityObject = {
@@ -52,7 +56,11 @@ const itemsSlice = createSlice({
         };
         state.push(cityObject);
       });
-    });
+    })
+    .addCase(fetchItems.rejected, (state, action) => {
+      console.log("error");
+    }
+    );   
   },
 });
 
