@@ -3,7 +3,7 @@ import main100Cities from './main100Cities.js';
 
 const initialState = {
   items: [],
-  rejected: false,
+  loading: false,
   error: false,
   filteredItems: []
 };
@@ -46,7 +46,6 @@ const itemsSlice = createSlice({
   name: 'cities',
   initialState,
   reducers: {
-
     filterItems: (state, action) => {
       const { input } = action.payload;
       console.log(input);
@@ -59,34 +58,35 @@ const itemsSlice = createSlice({
       }
     },
   },
-
   extraReducers: (builder) => {
     builder
-    .addCase(fetchItems.pending, (state) => {
-      state.rejected = false;
-      state.error = false;
-    })  
-    .addCase(fetchItems.fulfilled, (state, action) => {
-      const mainCitiesWorldwideData = action.payload;
-      mainCitiesWorldwideData.forEach((cityData, index) => {
-        const cityObject = {
-          id: index,
-          city: main100Cities[index],
-          components: cityData.list[0].components
-        };
-        state.items.push(cityObject);
-        state.filteredItems.push(cityObject);
+      .addCase(fetchItems.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(fetchItems.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = false;
+        const mainCitiesWorldwideData = action.payload;
+        mainCitiesWorldwideData.forEach((cityData, index) => {
+          const cityObject = {
+            id: index,
+            city: main100Cities[index],
+            components: cityData.list[0].components
+          };
+          state.items.push(cityObject);
+          state.filteredItems.push(cityObject);
+        });
+      })
+      .addCase(fetchItems.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
       });
-    })
-    .addCase(fetchItems.rejected, (state) => {
-      state.rejected = true;
-      state.error = true;
-    }
-    );   
   },
 });
 
 export const { filterItems } = itemsSlice.actions;
 export default itemsSlice.reducer;
+
 
 // Path: src/redux/items/itemsSlice.js
