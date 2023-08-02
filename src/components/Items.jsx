@@ -3,7 +3,7 @@ import Item from './Item';
 import '../styles/Items.css';
 
 const Items = () => {
-  const cities = useSelector((state) => state.cities.items);
+  const cities = useSelector((state) => state.cities.filteredItems);
   // console.log("cities", cities);
   return (
     <div className='items'>

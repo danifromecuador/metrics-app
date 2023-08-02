@@ -46,11 +46,12 @@ const itemsSlice = createSlice({
   name: 'cities',
   initialState,
   reducers: {
+
     filterItems: (state, action) => {
       const { input } = action.payload;
-      console.log(input);//this value is right
+      console.log(input);
       if (input.trim() === '') {
-        state.filteredItems = [];
+        state.filteredItems = [...state.items];
       } else {
         state.filteredItems = state.items.filter((city) =>
           city.city.toLowerCase().includes(input.trim().toLowerCase())
@@ -58,12 +59,13 @@ const itemsSlice = createSlice({
       }
     },
   },
+
   extraReducers: (builder) => {
     builder
     .addCase(fetchItems.pending, (state, action) => {
       state.rejected = false;
       state.error = false;
-    })    
+    })  
     .addCase(fetchItems.fulfilled, (state, action) => {
       const mainCitiesWorldwideData = action.payload;
       mainCitiesWorldwideData.forEach((cityData, index) => {
