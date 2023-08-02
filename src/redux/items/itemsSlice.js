@@ -62,7 +62,7 @@ const itemsSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-    .addCase(fetchItems.pending, (state, action) => {
+    .addCase(fetchItems.pending, (state) => {
       state.rejected = false;
       state.error = false;
     })  
@@ -78,7 +78,7 @@ const itemsSlice = createSlice({
         state.filteredItems.push(cityObject);
       });
     })
-    .addCase(fetchItems.rejected, (state, action) => {
+    .addCase(fetchItems.rejected, (state) => {
       state.rejected = true;
       state.error = true;
     }
