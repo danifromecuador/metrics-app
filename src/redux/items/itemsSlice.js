@@ -45,7 +45,19 @@ export const fetchItems = createAsyncThunk("items/fetchItems", async () => {
 const itemsSlice = createSlice({
   name: 'cities',
   initialState,
-  reducers: {},
+  reducers: {
+    filterItems: (state, action) => {
+      const { input } = action.payload;
+      console.log(input);//this value is right
+      if (input.trim() === '') {
+        state.filteredItems = [];
+      } else {
+        state.filteredItems = state.items.filter((city) =>
+          city.city.toLowerCase().includes(input.trim().toLowerCase())
+        );
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
     .addCase(fetchItems.pending, (state, action) => {
@@ -71,4 +83,5 @@ const itemsSlice = createSlice({
   },
 });
 
+export const { filterItems } = itemsSlice.actions;
 export default itemsSlice.reducer;

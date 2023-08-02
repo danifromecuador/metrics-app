@@ -8,3 +8,5 @@ const store = configureStore({
 });
 
 export default store;
+
+// Path: src/redux/store.js
