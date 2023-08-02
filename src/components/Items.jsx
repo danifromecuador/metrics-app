@@ -4,6 +4,7 @@ import '../styles/Items.css';
 
 const Items = () => {
   const cities = useSelector((state) => state.cities.items);
+  // console.log("cities", cities);
   return (
     <div className='items'>
       {cities.map((item, index) => (

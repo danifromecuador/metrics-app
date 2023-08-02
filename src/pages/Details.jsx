@@ -6,7 +6,7 @@ import '../styles/Details.css'
 
 
 const Details = () => {
-  const items = useSelector((state) => state.items);
+  const items = useSelector((state) => state.cities.items);
   const { city } = useParams();
   const selectedArrayItem = items.find((item) => item.city === city);
 
