@@ -3,7 +3,7 @@ import Item from './Item';
 import '../styles/Items.css';
 
 const Items = () => {
-  const items = useSelector((state) => state.items);
+  const items = useSelector((state) => state.cities);
   return (
     <div className='items'>
       {items.map((item, index) => (
