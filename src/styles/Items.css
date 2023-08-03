@@ -16,7 +16,7 @@
 .item:nth-child(18),
 .item:nth-child(19)
 {
-  background-color: #ec4c8a;; /* Replace this with your desired color for odd items */
+  background-color: #ec4c8a;
 }
 
 .item:nth-child(1),
@@ -30,5 +30,5 @@
 .item:nth-child(17),
 .item:nth-child(20)
 {
-  background-color: #d04278; /* Replace this with your desired color for even items */
+  background-color: #d04278;
 }
