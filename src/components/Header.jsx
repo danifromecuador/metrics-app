@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { IoIosArrowBack, IoMdMic } from 'react-icons/io';
+import { AiTwotoneSetting } from 'react-icons/ai';
 import '../styles/Header.css'
 
 const Header = () => {
@@ -7,7 +9,7 @@ const Header = () => {
     <header>
       <div className="left">
         <Link to="/" className="return-arrow">
-          &lt;
+        <IoIosArrowBack />
         </Link>
         <div className="year">
           2022
@@ -18,8 +20,8 @@ const Header = () => {
         <h2 className="h2-title hide">City Details</h2>
       </div>
       <div className="right">
-        <div className="microphone">micro</div>
-        <div className="configuration">config</div>
+          <IoMdMic />
+          <AiTwotoneSetting className="setupWheel" />
       </div>
     </header>
   );
