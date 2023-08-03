@@ -14,8 +14,7 @@
 .item:nth-child(14),
 .item:nth-child(15),
 .item:nth-child(18),
-.item:nth-child(19)
-{
+.item:nth-child(19) {
   background-color: #ec4c8a;
 }
 
@@ -28,7 +27,10 @@
 .item:nth-child(13),
 .item:nth-child(16),
 .item:nth-child(17),
-.item:nth-child(20)
-{
+.item:nth-child(20) {
   background-color: #d04278;
+}
+
+.loading, .error {
+  color: black;
 }
