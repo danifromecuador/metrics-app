@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.item:nth-child(2), 
+.item:nth-child(2),
 .item:nth-child(3),
 .item:nth-child(6),
 .item:nth-child(7),
@@ -31,6 +31,7 @@
   background-color: #d04278;
 }
 
-.loading, .error {
+.loading,
+.error {
   color: black;
 }
