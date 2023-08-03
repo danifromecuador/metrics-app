@@ -4,6 +4,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1rem;
 }
 
 .left {
@@ -12,4 +13,9 @@ header {
 
 .return-arrow {
   color: white;
+}
+
+.right {
+  display: flex;
+  gap: 1rem;
 }

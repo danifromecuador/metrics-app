@@ -25,7 +25,7 @@ const Details = () => {
           </Link>
         </div>
         <div className="center">
-          <h1 className="h2-title">City Details</h1>
+          <div className="h2-title">City Details</div>
         </div>
         <div className="right">
           <IoMdMic />
@@ -33,7 +33,7 @@ const Details = () => {
         </div>
       </header>
       <div className="details">
-        <h2>{selectedArrayItem.city}</h2>
+        <div>{selectedArrayItem.city}</div>
         <div className="details-container">
           <p>carbon monoxide {selectedArrayItem.components.co}</p>
           <p>nitrogen monoxide {selectedArrayItem.components.no}</p>
