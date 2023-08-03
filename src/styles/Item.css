@@ -1,7 +1,6 @@
 .item {
-  border: 1px solid red;
   width: 50%;
-  height: 100px;
+  height: 150px;
   text-decoration: none;
   color: black;
 }
