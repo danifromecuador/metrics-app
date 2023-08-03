@@ -15,7 +15,7 @@ const Header = () => {
       </div>
       <div className="center">
         <h1 className='h1-title'>Air Pollution App</h1>
-        <h2 className="h2-title">City Details</h2>
+        <h2 className="h2-title hide">City Details</h2>
       </div>
       <div className="right">
         <div className="microphone">micro</div>
