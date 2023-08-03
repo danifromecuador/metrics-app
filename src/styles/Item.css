@@ -1,6 +1,26 @@
 .item {
   width: 50%;
   height: 150px;
+  padding: 0 1rem;
   text-decoration: none;
-  color: black;
+  
+}
+
+.home-city-name {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-city-details {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.home-detail {
+  font-size: 0.8rem;
 }
