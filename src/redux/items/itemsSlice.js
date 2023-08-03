@@ -1,7 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import main100Cities from './main100Cities.js';
 
-const initialState = [];
+const initialState = {
+  items: [],
+  loading: false,
+  error: false,
+  filteredItems: []
+};
 
 const GEOCODEAPIENDPOINT = 'http://api.openweathermap.org/geo/1.0/direct?';
 const CITIESAIRPOLLUTIONENDPOINT = 'http://api.openweathermap.org/data/2.5/air_pollution?';
@@ -38,24 +43,49 @@ export const fetchItems = createAsyncThunk("items/fetchItems", async () => {
 });
 
 const itemsSlice = createSlice({
-  name: 'items',
+  name: 'cities',
   initialState,
-  reducers: {},
+  reducers: {
+    filterItems: (state, action) => {
+      const { input } = action.payload;
+      console.log(input);
+      if (input.trim() === '') {
+        state.filteredItems = [...state.items];
+      } else {
+        state.filteredItems = state.items.filter((city) =>
+          city.city.toLowerCase().includes(input.trim().toLowerCase())
+        );
+      }
+    },
+  },
   extraReducers: (builder) => {
-    builder.addCase(fetchItems.fulfilled, (state, action) => {
-      const mainCitiesWorldwideData = action.payload;
-      mainCitiesWorldwideData.forEach((cityData, index) => {
-        const cityObject = {
-          id: index,
-          city: main100Cities[index],
-          components: cityData.list[0].components
-        };
-        state.push(cityObject);
+    builder
+      .addCase(fetchItems.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(fetchItems.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = false;
+        const mainCitiesWorldwideData = action.payload;
+        mainCitiesWorldwideData.forEach((cityData, index) => {
+          const cityObject = {
+            id: index,
+            city: main100Cities[index],
+            components: cityData.list[0].components
+          };
+          state.items.push(cityObject);
+          state.filteredItems.push(cityObject);
+        });
+      })
+      .addCase(fetchItems.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
       });
-    });
   },
 });
 
+export const { filterItems } = itemsSlice.actions;
 export default itemsSlice.reducer;
 
 
