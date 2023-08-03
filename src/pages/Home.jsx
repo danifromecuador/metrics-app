@@ -3,6 +3,7 @@ import Items from "../components/Items";
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic } from 'react-icons/io';
 import { AiTwotoneSetting } from 'react-icons/ai';
+import '../styles/Home.css'
 
 const Home = () => {
   return (
