@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-
-import Header from "../components/Header";
+import { useSelector } from "react-redux"; import { Link } from 'react-router-dom';
+import { IoIosArrowBack, IoMdMic } from 'react-icons/io';
+import { AiTwotoneSetting } from 'react-icons/ai';
 import '../styles/Details.css'
 
 const Details = () => {
@@ -18,7 +18,20 @@ const Details = () => {
 
   return (
     <div className="details-page">
-      <Header />
+      <header>
+        <div className="left">
+          <Link to="/" className="return-arrow">
+            <IoIosArrowBack />
+          </Link>
+        </div>
+        <div className="center">
+          <h1 className="h2-title">City Details</h1>
+        </div>
+        <div className="right">
+          <IoMdMic />
+          <AiTwotoneSetting className="setupWheel" />
+        </div>
+      </header>
       <div className="details">
         <h2>{selectedArrayItem.city}</h2>
         <div className="details-container">
@@ -37,3 +50,5 @@ const Details = () => {
 };
 
 export default Details;
+
+// Path: src/pages/Home.jsx
