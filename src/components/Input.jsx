@@ -11,18 +11,16 @@ const Input = () => {
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setInputValue(inputValue);
-    // console.log(inputValue);
     dispatch(filterItems({ input: inputValue }));
   };
 
   return (
     <div className="inputContainer">
-      <input type="text" placeholder="Search" value={inputValue} onChange={handleInputChange} />
+      <input type="text" placeholder="Search city..." value={inputValue} onChange={handleInputChange} />
     </div>
   );
 }
 
 export default Input;
-
 
 // Path: src/components/Input.jsx
