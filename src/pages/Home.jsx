@@ -18,7 +18,7 @@ const Home = () => {
           </div>
         </div>
         <div className="center">
-          <h1 className='h1-title'>Air Pollution App</h1>
+          <div className='h1-title'>Air Pollution App</div>
         </div>
         <div className="right">
           <IoMdMic />

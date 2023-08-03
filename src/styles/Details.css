@@ -1,4 +1,68 @@
-.details {
-  border: 1px solid red;
-  margin-top: 50px;
+.details-page-header {
+  height: 4rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.details-city-header {
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 1rem;
+  background-color: #ee6298;
+}
+
+.details-city-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail-name,
+.detail-name.left {
+  width: 50%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.detail-name:nth-child(1),
+.detail-name:nth-child(2),
+.detail-name:nth-child(5),
+.detail-name:nth-child(6),
+.detail-name:nth-child(9),
+.detail-name:nth-child(10),
+.detail-name:nth-child(13),
+.detail-name:nth-child(14),
+.detail-name:nth-child(17),
+.detail-name:nth-child(18) {
+  background-color: #ec4c8a;
+}
+
+.detail-name:nth-child(3),
+.detail-name:nth-child(4),
+.detail-name:nth-child(7),
+.detail-name:nth-child(8),
+.detail-name:nth-child(11),
+.detail-name:nth-child(12),
+.detail-name:nth-child(15),
+.detail-name:nth-child(16),
+.detail-name:nth-child(19),
+.detail-name:nth-child(20) {
+  background-color: #d04278;
+}
+
+.detail-name.left {
+  display: flex;
+  justify-content: flex-end;
 }

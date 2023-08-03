@@ -18,14 +18,14 @@ const Details = () => {
 
   return (
     <div className="details-page">
-      <header>
+      <header className="details-page-header">
         <div className="left">
           <Link to="/" className="return-arrow">
             <IoIosArrowBack />
           </Link>
         </div>
         <div className="center">
-          <h1 className="h2-title">City Details</h1>
+          <div className="h2-title">City Details</div>
         </div>
         <div className="right">
           <IoMdMic />
@@ -33,16 +33,20 @@ const Details = () => {
         </div>
       </header>
       <div className="details">
-        <h2>{selectedArrayItem.city}</h2>
+        <div className="details-city-header">
+          <div className="details-city-name">{selectedArrayItem.city}</div>
+          <div>Carbon Monoxide: {selectedArrayItem.components.co}</div>
+        </div>
+
         <div className="details-container">
-          <p>carbon monoxide {selectedArrayItem.components.co}</p>
-          <p>nitrogen monoxide {selectedArrayItem.components.no}</p>
-          <p>nitrogen dioxide {selectedArrayItem.components.no2}</p>
-          <p>ozone {selectedArrayItem.components.o3}</p>
-          <p>sulphur dioxide {selectedArrayItem.components.so2}</p>
-          <p>pm2.5 {selectedArrayItem.components.pm2_5}</p>
-          <p>pm10 {selectedArrayItem.components.pm10}</p>
-          <p>ammonia {selectedArrayItem.components.nh3}</p>
+          <p className="detail-name">carbon monoxide:</p> <p className="detail-name left">{selectedArrayItem.components.co}</p>
+          <p className="detail-name">nitrogen monoxide:</p> <p className="detail-name left"> {selectedArrayItem.components.no}</p>
+          <p className="detail-name">nitrogen dioxide:</p> <p className="detail-name left"> {selectedArrayItem.components.no2}</p>
+          <p className="detail-name">ozone:</p> <p className="detail-name left"> {selectedArrayItem.components.o3}</p>
+          <p className="detail-name">sulphur dioxide:</p> <p className="detail-name left"> {selectedArrayItem.components.so2}</p>
+          <p className="detail-name">pm2.5:</p> <p className="detail-name left"> {selectedArrayItem.components.pm2_5}</p>
+          <p className="detail-name">pm10:</p> <p className="detail-name left"> {selectedArrayItem.components.pm10}</p>
+          <p className="detail-name">ammonia:</p> <p className="detail-name left"> {selectedArrayItem.components.nh3}</p>
         </div>
       </div>
     </div>

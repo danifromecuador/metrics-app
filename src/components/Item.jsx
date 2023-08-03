@@ -13,9 +13,11 @@ const Item = ({ city, carbonMonoxide, ozone }) => {
 
   return (
     <Link to={`/details/${city}`} className="item" onClick={handleOnClick}>
-      <h2>{city}</h2>
-      <p>Carbon Monoxide Concentration: {carbonMonoxide}</p>
-      <p>Ozone Concentration: {ozone}</p>
+      <h2 className='home-city-name'>{city}</h2>
+      <div className="home-city-details">
+        <p className='home-detail'>Carbon Monoxide Concentration: {carbonMonoxide}</p>
+        <p className='home-detail'>Ozone Concentration: {ozone}</p>
+      </div>
     </Link>
   );
 };

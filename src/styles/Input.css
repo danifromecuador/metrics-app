@@ -1,5 +1,5 @@
 .inputContainer {
-  height: 80px;
+  height: 4rem;
   background-color: white;
   display: flex;
   align-items: center;
@@ -7,9 +7,10 @@
 
 input {
   width: 90%;
-  height: 50px;
+  height: 3rem;
   margin: 0 auto;
   padding: 0 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #ec4c8a;
   border-radius: 15px;
+  color: #ec4c8a;
 }

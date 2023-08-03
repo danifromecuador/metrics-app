@@ -9,7 +9,7 @@ const mainCitiesWorldwide = [
   'Dhaka',
   'Mexico City',
   'Osaka',
-  /*'Karachi',
+  'Karachi',
   'Chongqing',
   'Istanbul',
   'Buenos Aires',
@@ -18,7 +18,7 @@ const mainCitiesWorldwide = [
   'Kinshasa',
   'Manila',
   'Rio de Janeiro',
-  'Guangzhou',
+  'Guangzhou',/*
   'Lahore',
   'Lima',
   'Bangkok',
