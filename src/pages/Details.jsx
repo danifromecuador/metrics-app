@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux"; import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic } from 'react-icons/io';
 import { AiTwotoneSetting } from 'react-icons/ai';
-import '../styles/Details.css'
+// import '../styles/Details.css'
 
 const Details = () => {
   const { city } = useParams();

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { filterItems } from '../redux/items/itemsSlice'; // Import the filterItems action
-import '../styles/Input.css';
+// import '../styles/Input.css';
 
 
 const Input = () => {
