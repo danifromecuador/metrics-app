@@ -1,16 +1,19 @@
 /* eslint-disable-next-line */
 import React from 'react';
-import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
+import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux'; // Import Provider
+import { BrowserRouter } from 'react-router-dom';
+import store from '../redux/store'; // Import your Redux store
 import Home from '../pages/Home';
 
 test('renders home page title', () => {
-  const { getByText } = render(
-    // Wrap the Home component with MemoryRouter
-    <MemoryRouter>
-      <Home />
-    </MemoryRouter>
+  render(
+    <Provider store={store}> {/* Wrap Home in Provider */}
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    </Provider>
   );
-  const titleElement = getByText(/Air Pollution App/i);
+  const titleElement = screen.getByText(/Air Pollution App/i);
   expect(titleElement).toBeInTheDocument();
 });
