@@ -58,6 +58,13 @@ input:focus {
   align-items: center;
 }
 
+.item {
+  width: 50%;
+  height: 150px;
+  padding: 0 1rem;
+  text-decoration: none;
+}
+
 .item:nth-child(2),
 .item:nth-child(3),
 .item:nth-child(6),
@@ -90,12 +97,6 @@ input:focus {
 }
 
 /* Item */
-.item {
-  width: 50%;
-  height: 150px;
-  padding: 0 1rem;
-  text-decoration: none;
-}
 
 .home-city-name {
   height: 50%;
