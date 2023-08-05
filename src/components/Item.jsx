@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { filterItems } from '../redux/items/itemsSlice';
-// import '../styles/Item.css';
 
 const Item = ({ city, carbonMonoxide, ozone }) => {
   const dispatch = useDispatch();

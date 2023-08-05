@@ -2,7 +2,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Item from './Item';
-// import '../styles/Items.css';
 
 const Items = () => {
   const cities = useSelector((state) => state.cities.filteredItems);
