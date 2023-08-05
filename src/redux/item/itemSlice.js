@@ -14,3 +14,5 @@ const inputSlice = createSlice({
 
 export const { setInput } = inputSlice.actions;
 export default inputSlice.reducer;
+
+// Path: src/redux/item/itemSlice.js
