@@ -2,16 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { filterItems } from '../redux/items/itemsSlice';
 
-const Item = ({ city, carbonMonoxide, ozone }) => {
-  const dispatch = useDispatch();
-
-  const handleOnClick = () => {
-    dispatch(filterItems({ input: '' }));
-  };
-
+const Item = ({ city, carbonMonoxide, ozone, handleOnClick }) => {  
   return (
     <Link to={`/details/${city}`} className="item" onClick={handleOnClick}>
       <h2 className='home-city-name'>{city}</h2>
