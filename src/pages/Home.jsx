@@ -1,5 +1,3 @@
-/* eslint-disable-next-line */
-import React from 'react';
 import Input from "../components/Input";
 import Items from "../components/Items";
 import { Link } from 'react-router-dom';
