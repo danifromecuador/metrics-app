@@ -1,6 +1,5 @@
 /* eslint-disable-next-line */
 import React from 'react';
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux"; import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic } from 'react-icons/io';
@@ -11,8 +10,6 @@ const Details = () => {
   const items = useSelector((state) => state.cities.items);
   const selectedArrayItem = items.find((item) => item.city === city);
 
-  useEffect(() => {
-  }, [city]);
   if (!selectedArrayItem) {
     return <div>Loading...</div>;
   }
