@@ -8,8 +8,8 @@ const initialState = {
   filteredItems: []
 };
 
-const GEOCODEAPIENDPOINT = 'http://api.openweathermap.org/geo/1.0/direct?';
-const CITIESAIRPOLLUTIONENDPOINT = 'http://api.openweathermap.org/data/2.5/air_pollution?';
+const GEOCODEAPIENDPOINT = 'https://api.openweathermap.org/geo/1.0/direct?';
+const CITIESAIRPOLLUTIONENDPOINT = 'https://api.openweathermap.org/data/2.5/air_pollution?';
 const WEATHERAPIKEY = "bb97736519c9fc5db2374f27ed914c13";
 
 const geoCode = async (city) => {
