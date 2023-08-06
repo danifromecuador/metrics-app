@@ -1,8 +1,8 @@
+/* eslint-disable-next-line */
+import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { filterItems } from '../redux/items/itemsSlice'; // Import the filterItems action
-import '../styles/Input.css';
-
 
 const Input = () => {
   const dispatch = useDispatch();

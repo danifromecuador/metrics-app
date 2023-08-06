@@ -1,17 +1,15 @@
-import { useEffect } from "react";
+/* eslint-disable-next-line */
+import React from 'react';
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux"; import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoMdMic } from 'react-icons/io';
 import { AiTwotoneSetting } from 'react-icons/ai';
-import '../styles/Details.css'
 
 const Details = () => {
   const { city } = useParams();
   const items = useSelector((state) => state.cities.items);
   const selectedArrayItem = items.find((item) => item.city === city);
 
-  useEffect(() => {
-  }, [city]);
   if (!selectedArrayItem) {
     return <div>Loading...</div>;
   }
@@ -55,4 +53,4 @@ const Details = () => {
 
 export default Details;
 
-// Path: src/pages/Home.jsx
+// Path: src/pages/Details.jsx

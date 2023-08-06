@@ -14,3 +14,7 @@ input {
   border-radius: 15px;
   color: #ec4c8a;
 }
+
+input:focus {
+  outline: none;
+}

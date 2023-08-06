@@ -1,18 +1,11 @@
+/* eslint-disable-next-line */
+import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { filterItems } from '../redux/items/itemsSlice';
-import '../styles/Item.css';
 
-const Item = ({ city, carbonMonoxide, ozone }) => {
-  const dispatch = useDispatch();
-
-  const handleOnClick = () => {
-    dispatch(filterItems({ input: '' }));
-  };
-
+const Item = ({ id, city, carbonMonoxide, ozone, handleOnClick }) => {  
   return (
-    <Link to={`/details/${city}`} className="item" onClick={handleOnClick}>
+    <Link to={`/details/${city}`} className="item" onClick={handleOnClick} id={id}>
       <h2 className='home-city-name'>{city}</h2>
       <div className="home-city-details">
         <p className='home-detail'>Carbon Monoxide Concentration: {carbonMonoxide}</p>
@@ -27,6 +20,7 @@ Item.propTypes = {
   city: PropTypes.string.isRequired,
   carbonMonoxide: PropTypes.number.isRequired,
   ozone: PropTypes.number.isRequired,
+  handleOnClick: PropTypes.func.isRequired,
 };
 
 export default Item;
