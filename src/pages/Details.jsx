@@ -52,5 +52,3 @@ const Details = () => {
 };
 
 export default Details;
-
-// Path: src/pages/Details.jsx

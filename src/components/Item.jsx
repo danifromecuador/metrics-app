@@ -24,5 +24,3 @@ Item.propTypes = {
 };
 
 export default Item;
-
-// Path: src/components/Item.jsx

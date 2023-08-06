@@ -32,5 +32,3 @@ const array = [
 ];
 
 export default array;
-
-// Path: src/components/array.js

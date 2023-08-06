@@ -33,5 +33,3 @@ const Home = () => {
 }
 
 export default Home;
-
-// Path: src/pages/Home.jsx

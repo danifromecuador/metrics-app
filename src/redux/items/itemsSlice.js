@@ -87,6 +87,3 @@ const itemsSlice = createSlice({
 
 export const { filterItems } = itemsSlice.actions;
 export default itemsSlice.reducer;
-
-
-// Path: src/redux/items/itemsSlice.js
