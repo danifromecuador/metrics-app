@@ -90,5 +90,8 @@ describe('Items component', () => {
     expect(screen.getByText('Tokyo')).toBeInTheDocument();
     expect(screen.getByText('Delhi')).toBeInTheDocument();
     expect(screen.getByText('Carbon Monoxide Concentration: 500.68')).toBeInTheDocument();
+    const itemsContainer = screen.getByTestId('items-container');
+    const children = itemsContainer.children;
+    expect(children).toHaveLength(2);
   });
 });

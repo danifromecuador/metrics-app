@@ -15,7 +15,7 @@ const Items = () => {
 
 
   return (
-    <div className='items'>
+    <div className='items' data-testid='items-container'>
       {loading ? (
         <div className='loading'>Loading...</div>
       ) : error ? (
