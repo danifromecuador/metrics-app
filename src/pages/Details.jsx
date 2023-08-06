@@ -53,4 +53,4 @@ const Details = () => {
 
 export default Details;
 
-// Path: src/pages/Home.jsx
+// Path: src/pages/Details.jsx
