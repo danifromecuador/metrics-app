@@ -1,0 +1,22 @@
+header {
+  height: 4rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  background-color: #ec4c8a;
+}
+
+.left {
+  display: flex;
+}
+
+.return-arrow {
+  color: white;
+}
+
+.right {
+  display: flex;
+  gap: 1rem;
+}
