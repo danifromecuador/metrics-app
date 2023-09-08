@@ -140,7 +140,7 @@ If you like this project give me a star on my [GitHub Repo](https://github.com/d
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank [this youtuber](https://www.youtube.com/@WebDevSimplified) 
+If you liked the original design that inspired this project, I recommend you visit [Nelson Sakwa's Behance post](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)). and follow him on Behance to support her work.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

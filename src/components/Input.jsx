@@ -1,5 +1,3 @@
-/* eslint-disable-next-line */
-import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { filterItems } from '../redux/items/itemsSlice'; // Import the filterItems action
@@ -22,5 +20,3 @@ const Input = () => {
 }
 
 export default Input;
-
-// Path: src/components/Input.jsx
